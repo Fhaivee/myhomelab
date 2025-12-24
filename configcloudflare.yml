@@ -1,3 +1,8 @@
+protocol: http2
+tunnel: <token>
+credentials-file: /usr/local/etc/cloudflared/<token>
+
+
 ingress:
   - hostname: jellyfin.justifhaive07.my.id
     service: http://192.168.1.101:8096
@@ -5,3 +10,5 @@ ingress:
     service: https://192.168.1.104:8000
     originRequest:
       noTLSVerify: true
+  
+- service: http_status:404
